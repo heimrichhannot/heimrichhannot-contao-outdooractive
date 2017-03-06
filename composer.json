@@ -1,0 +1,41 @@
+{
+  "name": "heimrichhannot/contao-outdooractive",
+  "description": "Outdooractive contao implementation to provide access to outdoor activities.",
+  "keywords": [
+    "outdooractive",
+    "leisuretip",
+    "contao",
+    "tourist information"
+  ],
+  "type": "contao-module",
+  "homepage": "https://github.com/heimrichhannot/contao-outdooractive",
+  "license": "LGPL-3.0+",
+  "authors": [
+    {
+      "name": "Heimrich & Hannot",
+      "email": "digitales@heimrich-hannot.de",
+      "homepage": "http://www.heimrich-hannot.de",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/heimrichhannot/contao-outdooractive/issues"
+  },
+  "require": {
+    "php": "~5.6 || ^7.0",
+    "contao/core": ">=3.0,<4-dev",
+    "contao-community-alliance/composer-installer": "*"
+  },
+  "autoload": {
+    "classmap": [
+      ""
+    ]
+  },
+  "extra": {
+    "contao": {
+      "sources": {
+        "": "system/modules/outdooractive"
+      }
+    }
+  }
+}

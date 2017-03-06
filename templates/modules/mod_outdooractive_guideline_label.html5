@@ -1,0 +1,10 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<?php /* Check: http://developers.outdooractive.com/Overview/Guidelines.html */ ?>
+<a href="http://www.outdooractive.com" title="<?= $this->label; ?>">
+    <img src="http://res.oastatic.com/partner/outdooractive-black.png" alt="outdooractive" /><?= $this->label; ?>
+</a>
+
+<?php $this->endblock(); ?>

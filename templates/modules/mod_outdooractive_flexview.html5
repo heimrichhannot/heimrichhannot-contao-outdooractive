@@ -1,0 +1,228 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<div class="oax-top-cont"></div>
+
+<!-- adjust for your needs, see http://developers.outdooractive.com/API-Reference/JavaScript/FlexView-API.html#configuration -->
+<script type="text/javascript">
+
+    var conf = {
+        // the type of the FlexView instance:
+        // "tour", "hut", "story", "skiresort", "poi", "condition", "offer"
+        frontendtype:   "tour",
+        // frontendtype "poi" shows only selected POIs ("destinations") by default
+        // ("Refine your search" checkbox "Show further POIs" is not checked)
+        // set "check_init_destination" to true to remove this filter and to show all POIs
+        // conf.check_init_destination": true
+
+        // List of enabled FlexView Modes
+        modes: [
+            "gallery",
+            "map",
+            "list",
+            "listMap"
+            //, "magazine" // this mode is only available if content type history is chosen
+        ],
+        // initial FlexView mode
+        "initMode": "listMap",
+
+        // Show a list of OOIs
+        // Note: use frontendtyp "toptipps" if you are using different content types (e.g. tour and poi)
+        // initDataPointList: [ '1397449', '5345254' ],
+        // let the FlexView API set the map extent fitting to the loaded objects
+        // fitDataBounds: true,
+        // map configuration
+        "cfg": {
+
+            // initialize the "What?"-selector with a category/activity
+//            "what": {
+//                "selected_init": "8982342"
+//            },
+//
+//            // initialize the "Where?"-selector with a region
+//            "where": {
+//                "selected_init": '1044895'
+//            },
+
+            // filter options that have no GUI
+//            "initFilterNoGui" : {
+//
+//                // filter by content source
+//                orgId: "1010"
+//
+//            },
+
+            // choose all map raster content here
+//            "maplayer": {
+//
+//                // the base maps (at the bottom)
+//                "basemap": {
+//
+//                    // initial map center
+//                    "center": [
+//                        10.2210235,
+//                        47.560012
+//                    ],
+//
+//                    // initial map zoom
+//                    "zoom": 10,
+
+                    // list of available base map types
+//                    "layer": [
+//                        "satellite",
+//                        "terrain",
+//                        "oa_topo",
+//                        "earth_plugin",
+//                        "roadmap",
+//                        "oa_map",
+//                        "oa_map_winter",
+//                        "oa_hybrid",
+//                        "oa_osm"
+//                    ],
+
+                    // map type after map was created
+//                    "init": "oa_map"
+//
+//                },
+
+                // map overlays on top of the base map
+//                "mapoverlay": {
+//
+//                    // list of map overlays that are available to the user
+//                    "layer": [
+//                        "longDistanceCycling",
+//                        "weather",
+//                        "cycling",
+//                        "hiking",
+//                        "horseback",
+//                        "longDistanceHiking",
+//                        "skiresort_transp",
+//                        "avalanche_transp",
+//                        "panoramio",
+//                        "transalpMountainbiking"
+//                    ],
+//
+//                    // list of map overlays that are shown on load
+//                    "init": {
+//                        "cycling": false,
+//                        "hiking": true
+//                    }
+//                }
+
+//            }
+        },
+
+//        // behaviour when a detail view is opened
+//        "actionOpenType": "in-page",
+//
+//        // add "where" filter to GUI
+//        // "outdooractive", "none"
+//        "whereType": "outdooractive",
+//
+//        // add "what" filter to GUI
+//        // "simple", "none"
+//        "whatType": "simple",
+//
+//        // whatType mustn't be "none" if "what" is initialized
+//        // with a value ("selected_init")
+//        // use "whatHide" to hide "what" selector in this use case
+//
+//        // EVENTS
+//
+//        // FlexView API: view mode and full screen
+//        "onModeChange": function( mode ) {}, // list, map, map/list, gallery
+//        "onFullscreenChange": function() {}, // full screen open/close
+//
+//        // FlexView API: click on OOI
+//        // parameter ooi is a data object
+//
+//        // click on info window
+//        "onIwClick":        function ( ooi ) { console.debug( ooi.id ); },
+//
+//        // click on list item
+//        "onListClick":      function ( ooi ) { console.debug( ooi.id ); },
+//
+//        // click on map marker
+//        "onMapMarkerClick": function ( ooi ) { console.debug( ooi.id ); },
+//
+//        // click on an OOI (gallery, info window, list, ...)
+//        "onOoiClick":       function ( ooi, eventStr ) {
+//
+//            // parameter ooi is a content object
+//            console.debug( ooi.id );
+//
+//            // eventStr is a string with the event's name
+//            if ( eventStr == "mapMarker" ) {}
+//
+//        }
+//
+//    };
+//
+//    if (oa.PREFIX==="oax") {
+//
+//        // show map content panel
+//        conf.mcpCatList = "poi,hut,lodging";
+//
+//        // show huts (checkbox map content panel checked)
+//        conf.mcpInitList = [ "hut" ];
+//
+//        // open advanced filter options menu initially
+//        conf.initFilterOpen = false;
+//
+//        // Write FlexView and map state to url hash (or not)
+//        // default: true
+//        conf.withUrlHash = true;
+//
+//        // docking controls on scrolling web page
+//        // default: true
+//        conf.autoDockingControls = false;
+//
+//        // open full screen mode on page load
+//        // default: false
+//        conf.initFullscreen = false;
+//
+//        // set sort order of lists:
+//        // (sort by title asc)
+//        conf.cfg.sort = {
+//            // use information out of configuration object
+//            selected_initFromDom : false,
+//
+//            // initially sort by "distance"
+//            selected_init_value : "distance",
+//
+//            // set initial sort order for columns (see "little arrows")
+//            key2ascendant_init : {
+//                title : true,
+//                distance : true
+//            }
+//
+//        };
+//
+//        // initialize filter ("refine your search")
+//        conf.cfg.filter = {
+//            // checkbox "easy" checked (filter easy tours)
+//            check_init_easy:true,
+//
+//            // checkbox "Suitable for families and children" checked
+//            check_init_suitableforfamilies:true,
+//        };
+//
+//
+//        // click on gallery item
+//        conf.onGalleryClick =   function ( ooi ) { console.debug( ooi.id ); };
+//
+//        // click on magazine snippet
+//        conf.onMagazineClick =  function ( ooi ) { console.debug( ooi.id ); };
+//
+//        // click on list item on map
+//        conf.onMapListClick =   function ( ooi ) { console.debug( ooi.id ); };
+//
+    };
+
+    // pass the configuration object to the constructor
+    var fvp = oa.api.flexviewpage(conf);
+
+</script>
+
+<?php $this->endblock(); ?>
